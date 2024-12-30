@@ -1,13 +1,20 @@
-async function fetchAPI(query, { variables } = {}) {
+async function fetchAPI(query) {
   try{
+
     const response = await fetch(process.env.NEXT_PUBLIC_STRAPI_API_URL + "posts");
     const data = await response.json();
-    return {} = data.data
+    return data.data
   }
   catch(error){
     console.error(error);
   }
 }
+
+export async function fetchPosts() {
+  const data = await fetchAPI("ou");
+  return data
+}
+
 
 export async function getPreviewPostBySlug(slug) {
   const data = await fetchAPI(
