@@ -9,10 +9,11 @@ import Layout from '@/components/layout'
 import PostTitle from '@/components/post-title'
 import { fetchPosts, getStrapiData } from '@/lib/api'
 import Head from 'next/head'
+import { log } from 'console'
 
 
 
-export default function Post({ post, morePosts, preview, globalData }) {
+export default function Post({ post, morePosts, preview, metaData }) {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -20,7 +21,7 @@ export default function Post({ post, morePosts, preview, globalData }) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header h1="Roosenhart" imageUrl={globalData.logo.url}/>
+        <Header h1="Roosenhart" imageUrl={"metaData"}/>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -54,6 +55,8 @@ export async function getStaticProps({ params, preview = null }) {
   const data = await fetchPosts()
   //const content = await markdownToHtml(data?.posts[0]?.content || '')
   const globalData = await getStrapiData("global?populate=*");
+  log(globalData);
+  
 
   return {
     props: {
@@ -66,6 +69,7 @@ export async function getStaticProps({ params, preview = null }) {
       metaData: {
         title: globalData.defaultSeo.metaTitle,
         description: globalData.defaultSeo.metaDescription,
+        logo: globalData.logo,
         icons: {
           icon: globalData.favicon.url,
         },

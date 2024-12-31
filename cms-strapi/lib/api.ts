@@ -1,7 +1,7 @@
 async function fetchAPI(query) {
   try{
 
-    const response = await fetch(process.env.NEXT_PUBLIC_STRAPI_API_URL + "posts");
+    const response = await fetch(process.env.BASE_API_URL + "posts");
     const data = await response.json();
     return data.data
   }
