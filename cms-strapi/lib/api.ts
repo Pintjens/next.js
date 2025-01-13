@@ -1,11 +1,10 @@
-import { log } from "console";
 
 async function getStrapiData(query : string) {
   try{
-    log(query)
+
     const response = await fetch(process.env.BASE_API_URL + query);
     const data = await response.json();
-    log(query, data.data)
+
     return data.data
   }
   catch(error){

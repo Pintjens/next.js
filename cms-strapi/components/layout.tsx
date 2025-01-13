@@ -1,16 +1,17 @@
-import { fetchGlobals, fetchPosts } from '@/lib/api';
 import Alert from './alert'
 import Footer from './footer'
 import Meta from './meta'
 import { Header } from './header';
+import * as globalData from '../lib/globalData.json';
 
-export default function Layout({ preview, children, globalData }) {
+
+export default function Layout({ children }) {
   return (
     <>
-      <Meta />
+      <Meta globalData = {globalData}/>
       <Header h1="" imageUrl={globalData.logo.url}/>
       <div className="min-h-screen">
-        <Alert preview={preview} />
+        <Alert/>
         <main>{children}</main>
       </div>
       <Footer />
