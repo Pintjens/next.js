@@ -33,6 +33,10 @@ export async function fetchWorkshops(){
   const data = await getStrapiData("workshops?populate=*");
   return data;
 }
+export async function fetchWorkshop(slug : string){
+  const data = await getStrapiData("workshops?populate=*");
+  return data.filter(x => x.slug == slug)[0];;
+}
 
 
 export async function fetchPosts() {

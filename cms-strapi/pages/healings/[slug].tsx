@@ -1,7 +1,7 @@
 import { fetchHealing, fetchHealings } from "@/lib/api";
 
 
-  export default function Page({healing}) {
+  export default function HealingDetailPage({healing}) {
     
     return(
       <>
