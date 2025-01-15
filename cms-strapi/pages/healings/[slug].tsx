@@ -5,9 +5,8 @@ import { fetchHealing, fetchHealings } from "@/lib/api";
     
     return(
       <>
-        <p> name {healing.name}</p>
-        <p> healing {healing.id}</p>
-        <p>test {healing.name}</p>
+        <h1>Detail page for {healing.name}</h1>
+        <p>Under construction</p>
       </>
     )
   }

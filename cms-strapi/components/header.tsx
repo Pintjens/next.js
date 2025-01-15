@@ -30,14 +30,14 @@ export function Header({h1, imageUrl} : HeaderProps){
         </Link>
   
         <Link
-          className={`link ${pathname === '/healings' ? 'active' : ''}`}
+          className={`link ${pathname.includes('/healings') ? 'active' : ''}`}
           href="/healings"
           >
           Healings
         </Link>
 
         <Link
-          className={`link ${pathname === '/workshops' ? 'active' : ''}`}
+          className={`link ${pathname.includes('/workshops') ? 'active' : ''}`}
           href="/workshops"
           >
           Workshops
