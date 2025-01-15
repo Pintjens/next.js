@@ -1,8 +1,19 @@
 import { fetchWorkshop, fetchWorkshops } from "@/lib/api";
+import { useRouter } from "next/router";
 
 
   export default function WorkshopDetailPage({workshop}) {
     
+    const router = useRouter()
+ 
+    // If the page is not yet generated, this will be displayed
+    // initially until getStaticProps() finishes running
+    if (router.isFallback) {
+      return <div>Loading...</div>
+    }
+   
+    // Render post...
+
     return(
       <>
         <h1>Detail page for {workshop.name}</h1>

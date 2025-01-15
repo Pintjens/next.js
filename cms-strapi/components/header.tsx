@@ -8,7 +8,7 @@ interface HeaderProps{
 };
 
 export function Header({h1, imageUrl} : HeaderProps){
-  const pathname = usePathname()
+  const pathname = usePathname() || '';
  
   return (
     <header>
