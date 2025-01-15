@@ -17,6 +17,24 @@ export async function fetchGlobals(){
   return data;
 }
 
+export async function fetchHealings(){
+  const data = await getStrapiData("healings?populate=*");
+  return data;
+}
+
+export async function fetchHealing(slug : string){
+  const data = await getStrapiData("healings?populate=*");
+  return data.filter(x => x.slug == slug)[0];
+}
+
+
+
+export async function fetchWorkshops(){
+  const data = await getStrapiData("workshops?populate=*");
+  return data;
+}
+
+
 export async function fetchPosts() {
   const data = await getStrapiData("posts");
   return data;

@@ -1,4 +1,4 @@
-import Date from './date'
+
 import Link from 'next/link'
 
 export default function PostPreview({
@@ -20,7 +20,7 @@ export default function PostPreview({
         </Link>
       </h3>
       <div className="text-lg mb-4">
-        <Date dateString={date} />
+
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <p>Used to be avatar</p>
