@@ -77,11 +77,11 @@ nav{
 main {
   display: flex;
   flex-direction: column;
-  max-width: 960px;
   padding-top: 2.1rem;
   padding-bottom: 1.2rem;
   align-items: center;
   gap: 3rem;
+  border: pink solid 3px;
 }
 
 nav a {
@@ -91,6 +91,20 @@ nav a {
 
 a{
   color: var(--active);
+}
+
+#workshops-overview{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#workshops-overview > *{
+  display: flex;
+  min-width: 300px;
+  height: 300px;
+  border: solid red 1px;
+  margin: 0.5rem;
+  justify-content: center;
 }
 
 .quote{

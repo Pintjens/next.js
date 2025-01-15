@@ -7,8 +7,7 @@ import Link from "next/link";
     return (
       <>
         <h1>Workshops</h1>
-
-        <h2>Under costruction, check back later</h2>
+        <section id="workshops-overview">
         {allWorkshops.map(workshop => {
           return(
             <Link href={`/workshops/${workshop.slug}`} className="hover:underline">
@@ -17,6 +16,7 @@ import Link from "next/link";
             </Link>
           )
         })}
+        </section>
       </>
     )
   }
